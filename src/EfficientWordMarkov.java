@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 public class EfficientWordMarkov extends WordMarkovModel {
 
 	// Instance variables
-	Map<WordGram, ArrayList<String>> myMap;
+	private Map<WordGram, ArrayList<String>> myMap;
 
 	// Constructor
 	public EfficientWordMarkov(int order) {

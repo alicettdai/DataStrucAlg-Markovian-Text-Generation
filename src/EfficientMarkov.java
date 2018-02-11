@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 public class EfficientMarkov extends MarkovModel {
 
 	// Instance variables
-	Map<String, ArrayList<String>> myMap; // what from the superclass is preserved in the subclass??
+	private Map<String, ArrayList<String>> myMap; // what from the superclass is preserved in the subclass??
 
 	// Constructor
 	public EfficientMarkov(int order) {
