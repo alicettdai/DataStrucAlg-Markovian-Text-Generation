@@ -1,22 +1,141 @@
-Name: [firstname lastname]
-NetID: [abc123]
-Hours Spent: [Give an exact (decimal) number here]
-Consulted With: [provide names or NetIDs of any students, TAs, or professors you consulted with on the assignment. If you did not consult with anyone, you must explicitly write NONE.]
-Resources Used: [Any books, papers, or online resources. If you did not use any outside resources, you must explicitly write NONE]
-Impressions: [Your answer here]
+Name: [alice dai]
+NetID: [ad322]
+Hours Spent: [15.5]
+Consulted With: [Emily Liu, Michael Casio, Azim Dharani]
+Resources Used: [A LOT of stackexchange and googling java APIs]
+Impressions: [This was very time consuming, and a lot of work to be completely honest. Not because the work itself was difficult, but because I was trying
+to do things with a language I'm not really familiar with. But I learned a ton, and I decided that I'd try to do this project relatively independently, and 
+learn how to google things and ask the right questions to the Internet before talking with my friends. Probably the most useful part of this assignment was
+feeling like I could do it on my own and get myself out of my confusion.]
 %%%%
 PROBLEM 1:
+For alice.text-
+k	#chars	source	mean  	sigma
+1	2000		163187	0.823	0.031
+1	4000		163187	1.475	0.000
+1	8000		163187	2.993	0.001
+1	16000	163187	5.936	0.003
+5	2000		163187	0.511	0.000
+5	4000		163187	1.052	0.000
+5	8000		163187	2.087	0.000
+5	16000	163187	4.209	0.003
+10	2000		163187	0.533	0.001
+10	4000		163187	1.039	0.000
+10	8000		163187	2.082	0.000
+10	16000	163187	4.169	0.001
+
+Varying file length, using k=5 and text length 400
+
+unique	size			name				#chars	mean		sigma
+8122		13107		poe.txt			400		0.009	0.000
+31012	82140		melville.txt		400		0.055	0.000
+42634	153088		romeo.txt		400		0.109	0.000
+42016	163189		alice.txt		400		0.102	0.000
+82337	496769		hawthorne.txt	400		0.319	0.000
+180176	4345018		kjv10.txt		400		2.778	0.004
+
+For hawthorne.text-
+k	#chars	source	mean		sigma
+1	2000		496768	2.672	0.015
+1	4000		496768	5.151	0.024
+1	8000		496768	10.558	0.375
+1	16000	496768	19.851	0.042
+5	2000		496768	1.611	0.001
+5	4000		496768	3.344	0.004
+5	8000		496768	6.755	0.018
+5	16000	496768	13.668	0.195
+10	2000		496768	1.654	0.000
+10	4000		496768	3.295	0.001
+10	8000		496768	6.724	0.015
+10	16000	496768	13.467	0.044
+
+Varying file length, using k=5 and text length 400
+
+unique	size		name				#chars	mean		sigma
+8122		13107	poe.txt			400		0.011	0.000
+31012	82140	melville.txt		400		0.054	0.000
+42634	153088	romeo.txt		400		0.117	0.000
+42016	163189	alice.txt		400		0.106	0.000
+82337	496769	hawthorne.txt	400		0.332	0.000
+180176	4345018	kjv10.txt		400		2.890	0.007
 
 %%%%
 PROBLEM 2:
-
+I put a timer to both alice.text and hawthorne.text test from question 1. alice.text ran for 5 minutes, and hawthorne.text ran for
+15 minutes. FINISH THE QUESTION
 %%%%
 PROBLEM 3:
+For alice.text-
+k	#chars	source	mean		sigma
+1	2000		163187	0.029	0.001
+1	4000		163187	0.015	0.000
+1	8000		163187	0.013	0.000
+1	16000	163187	0.019	0.000
+5	2000		163187	0.026	0.000
+5	4000		163187	0.024	0.000
+5	8000		163187	0.057	0.001
+5	16000	163187	0.030	0.000
+10	2000		163187	0.035	0.000
+10	4000		163187	0.033	0.000
+10	8000		163187	0.050	0.000
+10	16000	163187	0.054	0.000
 
+Varying file length, using k=5 and text length 400
+
+unique	size		name				#chars	mean		sigma
+8122		13107	poe.txt			400		0.002	0.000
+31012	82140	melville.txt		400		0.012	0.000
+42634	153088	romeo.txt		400		0.021	0.000
+42016	163189	alice.txt		400		0.023	0.000
+82337	496769	hawthorne.txt	400		0.073	0.000
+180176	4345018	kjv10.txt		400		1.052	0.162
+
+For hawthorne.text-
+Starting tests
+k	#chars	source	mean		sigma
+1	2000		496768	0.048	0.001
+1	4000		496768	0.032	0.000
+1	8000		496768	0.038	0.000
+1	16000	496768	0.030	0.000
+5	2000		496768	0.093	0.001
+5	4000		496768	0.072	0.000
+5	8000		496768	0.072	0.000
+5	16000	496768	0.096	0.000
+10	2000		496768	0.131	0.002
+10	4000		496768	0.122	0.000
+10	8000		496768	0.124	0.000
+10	16000	496768	0.127	0.000
+
+Varying file length, using k=5 and text length 400
+
+unique	size		name				#chars	mean		sigma
+
+8122		13107	poe.txt			400		0.002	0.000
+31012	82140	melville.txt		400		0.012	0.000
+42634	153088	romeo.txt		400		0.022	0.000
+42016	163189	alice.txt		400		0.025	0.000
+82337	496769	hawthorne.txt	400		0.080	0.000
+180176	4345018	kjv10.txt		400		0.969	0.139
+
+FINISH QUESTION
 %%%%
 PROBLEM 4:
+Output with testfile.txt-
 
+5 markov model with 448 chars
+----------------------------------
+ and exclamation will do, but why won't it work? Because it's 
+stupid. What's up with this? It's a silly thing, a really silly 
+thing, a really silly thing. The reason that finding sentences 
+works is because it's stupid. What's up with this? It's only 
+a test. It's only a test. It's a silly thing, a really silly 
+thing. The reason that finding sentences work? Because! Simply 
+because of punctuation. Any punctuation points do a bang up job!! 
+Get it? 
+----------------------------------
+On average, 448 characters will be generated.
 %%%%
 PROBLEM 5:
+
 
 %%%%

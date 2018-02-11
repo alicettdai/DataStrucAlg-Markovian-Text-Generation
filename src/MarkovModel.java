@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MarkovModel  implements MarkovInterface<String> {
-	protected String myText;
+	protected String myText; //protected variables are available in the subclasses
 	protected Random myRandom;
 	protected int myOrder;
 	protected static String PSEUDO_EOS = "";

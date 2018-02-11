@@ -75,5 +75,40 @@ public class WordGramTester {
 		assertEquals("shift add",as.equals(b),true);
 		assertEquals("shift add length",as.length() == a.length(),true);
 	}
+	
+	@Test
+	public void testShiftAdd() {
+		String[] words = {"apple", "zebra", "mongoose", "hat","cat"};
+		WordGram a = new WordGram(words,0,4);
+		WordGram b = new WordGram(words,1,4);
+		WordGram c= new WordGram(words,2,2); //two words
+		WordGram d= new WordGram(words,0,1); //one word
+		WordGram as = a.shiftAdd("cat");
+		WordGram cs= c.shiftAdd("cat");
+		WordGram ds= d.shiftAdd("zebra");
+		assertEquals("shift add",as.equals(b),true);
+		assertEquals("shift add",cs.equals(new WordGram(words,3,2)), true); //new
+		assertEquals("shift add",ds.equals(new WordGram(words,1,1)), true); //new
+		assertEquals("shift add length",as.length() == a.length(),true);
+		assertEquals("shift add length",cs.length() == c.length(),true); //new
+		assertEquals("shift add length",ds.length() == d.length(),true); //new
+	}
+	
+	@Test
+	public void testToString() {
+		String[] words = {"apple", "zebra", "mongoose", "hat","cat"};
+		WordGram a = new WordGram(words,0,4);
+		WordGram b = new WordGram(words,1,3);
+		WordGram c= new WordGram(words,2,2); //two words
+		WordGram d= new WordGram(words,0,1); //one word
+		String aString= a.toString();
+		assertEquals("to string", aString.equals("apple zebra mongoose hat"),true);
+		String bString= b.toString();
+		assertEquals("to string", bString.equals("zebra mongoose hat"),true);
+		String cString= c.toString();
+		assertEquals("to string", cString.equals("mongoose hat"),true);
+		String dString= d.toString();
+		assertEquals("to string", dString.equals("apple"),true);
+	}
 
 }
