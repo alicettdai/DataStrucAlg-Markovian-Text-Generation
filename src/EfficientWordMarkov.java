@@ -2,8 +2,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class EfficientWordMarkov extends WordMarkovModel {
+
 
 	// Instance variables
 	private Map<WordGram, ArrayList<String>> myMap;
@@ -11,7 +14,7 @@ public class EfficientWordMarkov extends WordMarkovModel {
 	// Constructor
 	public EfficientWordMarkov(int order) {
 		super(order); // calls a constructor from the super class with the same parameter list
-		myMap = new HashMap<WordGram, ArrayList<String>>();
+		myMap = new TreeMap<WordGram, ArrayList<String>>(); //Change to a tree map to test runtime
 	}
 
 	// setTraining goes through the training text and then
@@ -55,5 +58,4 @@ public class EfficientWordMarkov extends WordMarkovModel {
 			return valueOfKey;
 		}
 	}
-
 }

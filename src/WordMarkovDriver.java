@@ -2,7 +2,9 @@ import java.io.File;
 
 public class WordMarkovDriver {
 	public static void main(String[] args) {
-		String filename = "data/trump-un-sept19-17.txt";
+		long startTime = System.currentTimeMillis();
+		//String filename = "data/trump-un-sept19-17.txt";
+		String filename= "data/hawthorne.txt";
 		if (args.length > 0) {
 			filename = args[1];
 		}
@@ -16,6 +18,8 @@ public class WordMarkovDriver {
 			System.out.printf("%d markov model with %d words\n", k,random.split("\\s").length);
 			printNicely(random,60);
 		}
+		long endTime=System.currentTimeMillis()-startTime;
+		System.out.println("time elapsed is " + endTime);
 	}
 
 	private static void printNicely(String random, int screenWidth) {

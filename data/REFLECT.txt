@@ -62,7 +62,16 @@ unique	size		name				#chars	mean		sigma
 %%%%
 PROBLEM 2:
 I put a timer to both alice.text and hawthorne.text test from question 1. alice.text ran for 5 minutes, and hawthorne.text ran for
-15 minutes. FINISH THE QUESTION
+15 minutes. I timed it with minutes just to get a better sense of the duration, since the mean doesn't give me a good sense of time. 
+Anyway, I timed the run times for alice.txt and hawthorne.text, and also calculated that hawthorne is 3 times as long as alice, which 
+would be a good indication that the relationship between text length and run time is linear, since hawthorne also took three times as
+long to run compared to alice. Also, the means within a k also double as #chars double, and between k's the runtime are should get faster,
+as is more or less the trend in both files (the run times in the beginning of k=5 are faster than that of k=10).  
+
+Given these observations of linear trends, the mean time to generate 16,000 random characters for an order-5 Markov model 
+with a training text of 5.5 million characters should be (5.5 million divided by 496768) 11 times longer than hawthorne's mean run
+time with the same order and char #, so that's 13.668*11 = 151.
+
 %%%%
 PROBLEM 3:
 For alice.text-
@@ -100,7 +109,7 @@ k	#chars	source	mean		sigma
 5	2000		496768	0.093	0.001
 5	4000		496768	0.072	0.000
 5	8000		496768	0.072	0.000
-5	16000	496768	0.096	0.000
+5	160000	496768	0.096	0.000
 10	2000		496768	0.131	0.002
 10	4000		496768	0.122	0.000
 10	8000		496768	0.124	0.000
@@ -117,11 +126,19 @@ unique	size		name				#chars	mean		sigma
 82337	496769	hawthorne.txt	400		0.080	0.000
 180176	4345018	kjv10.txt		400		0.969	0.139
 
-FINISH QUESTION
+Both these runtimes (in minutes) took less than a minute to complete, and looking at the two tables for alice and hawthorne,
+hawthorne takes about twice as long to run as alice, but hawthorne is three times the length of alice. However, in EfficientMarkov, 
+the length of the text is way less indicative of the run time trends, since the text file is only run once. I also noticed that doubling
+the char# doesn't double the runtime, it actually decreases in most instances, which is weird since you'd think that increasing
+the char# would require more time. I think that the relationship between source size and run time is 3:2. If you triple the file size,
+you're doubling the run time. Using proportions (3/2=11/x), I get that a file size of 5.5million, which is 11 times larger than Hawthorne should
+take x=7.3 times as long to run, which is a significant improvement to 11 from question 2. This translates to roughly 0.096*7.3=0.708, which 
+is 213 times faster than my prediction in question 2. 
+
+
 %%%%
 PROBLEM 4:
 Output with testfile.txt-
-
 5 markov model with 448 chars
 ----------------------------------
  and exclamation will do, but why won't it work? Because it's 
@@ -133,9 +150,13 @@ thing. The reason that finding sentences work? Because! Simply
 because of punctuation. Any punctuation points do a bang up job!! 
 Get it? 
 ----------------------------------
+
 On average, 448 characters will be generated.
 %%%%
 PROBLEM 5:
-
-
+In general, hashmaps are more efficient than tree maps. Hashmaps aren't sorted, which saves time and computing power, and the hashcode 
+system makes sure that all the keys in the map are in unique places. I made a timer code on WordMarkov drive just to test this theory for 
+smaller files, and for HashMaps, the time elapsed in milliseconds is 93, and for TreeMaps, it was 107 milliseconds. This was a test for
+the Trump speech. I also ran the driver using Hawthorne, which is much longer, and the runtime for hashmap was 470 ms, and the runtime
+for treeMaps was 1365 ms. For larger files, it becomes even more apparent that HashMaps are more efficient. 
 %%%%
